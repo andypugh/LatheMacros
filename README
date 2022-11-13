@@ -1,23 +1,7 @@
-This config demonstrates the Lathe macros described here:
- http://www.linuxcnc.org/index.php/english/forum/41-guis/26550-lathe-macros
-To add the macros to your own config you need to add this line to the INI file [DISPLAY] section:
-[DISPLAY]
-EMBED_TAB_NAME=Cycles
-EMBED_TAB_COMMAND=halcmd loadusr -Wn gladevcp gladevcp -c gladevcp -u lathehandler.py -x {XID} lathemacro.ui
+The graphical background is now re-sizable and stored in an SVG (in fact each image is stored in a different layer in the same .SVG)
 
-Then put these files in the same directory as the INI file. 
-Bore.png
-boring.ngc
-chamfer.png
-chamfer.ngc
-facing.ngc
-Facing.png
-radius.ngc
-radius.png
-Threading.png
-threading.ngc
-turning.ngc
-Turn.png
-lathehandler.py
-lathemacro.ui
+Because Touchy always shows the DRO I have removed the DRO from the embedded tabs.
 
+Touchy uses a physical cycle-start button, so I have added a HAL pin to the embedded tabs and hidden the buttons on the tabs (the action buttons are still where the G-code calls are stored, the physical button is made to emit a click event). If anyone wants the touch-buttons then it should only be a case of making the buttons visible. This might mean adding a parent window such as an event box.
+
+Number-entry is now via a pop-up keyboard. I made a custom one to keep the option to type inch fractions (typing 1.3/4 will give 1.750)
