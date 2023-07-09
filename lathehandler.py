@@ -148,7 +148,9 @@ class HandlerClass:
 
     def keyb_pm_click(self, obj, data=None):
         data = self.entry.get_text()
-        if data[0] == '-':
+        if not data:
+            data = '-'
+        elif data[0] == '-':
             data = data[1:]
         else:
             data = '-' + data
