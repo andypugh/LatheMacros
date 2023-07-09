@@ -107,6 +107,7 @@ class HandlerClass:
         self.keyb = self.builder.get_object('keyboard')
         self.entry = self.builder.get_object('entry1')
         self.entry.modify_font(pango.FontDescription("courier 42"))
+        self.entry.set_text("")
         resp = self.keyb.run()
 
     def keyb_prev_click(self, obj, data=None):
@@ -131,7 +132,9 @@ class HandlerClass:
 
     def keyb_pm_click(self, obj, data=None):
         data = self.entry.get_text()
-        if data[0] == '-':
+        if not data:
+            data = '-'
+        elif data[0] == '-':
             data = data[1:]
         else:
             data = '-' + data
