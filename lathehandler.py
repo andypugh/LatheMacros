@@ -41,6 +41,7 @@ from gi.repository import GdkPixbuf
 debug = 0
 notouch = 0
 norun = 0
+svgfile = os.path.join(os.path.dirname(__file__), "LatheMacro.svg")
 
 class HandlerClass:
     active = False
@@ -115,7 +116,8 @@ class HandlerClass:
         t.connect_after("draw", self.on_expose)
         t.connect("destroy", Gtk.main_quit)
         t.add_events(Gdk.EventMask.STRUCTURE_MASK)
-        self.svg = Rsvg.Handle().new_from_file('LatheMacro.svg')
+        print(svgfile)
+        self.svg = Rsvg.Handle().new_from_file(svgfile)
         self.active = True
         
         # handle Useropts
@@ -148,9 +150,7 @@ class HandlerClass:
 
     def keyb_pm_click(self, obj, data=None):
         data = self.entry.get_text()
-        if not data:
-            data = '-'
-        elif data[0] == '-':
+        if data[0] == '-':
             data = data[1:]
         else:
             data = '-' + data
