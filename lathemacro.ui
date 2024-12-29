@@ -935,7 +935,7 @@
                     <property name="halign">end</property>
                     <property name="valign">end</property>
                     <child>
-                      <object class="GtkButton" id="Turn.action">
+                      <object class="GtkButton" id="tab0.action">
                         <property name="label">gtk-media-play</property>
                         <property name="use_action_appearance">False</property>
                         <property name="related_action">turn.go</property>
@@ -1193,7 +1193,7 @@
                     <property name="halign">end</property>
                     <property name="valign">end</property>
                     <child>
-                      <object class="GtkButton" id="Bore.action">
+                      <object class="GtkButton" id="tab1.action">
                         <property name="label">gtk-media-play</property>
                         <property name="use_action_appearance">False</property>
                         <property name="related_action">bore.go</property>
@@ -1479,7 +1479,7 @@
                     <property name="valign">end</property>
                     <property name="visible_window">False</property>
                     <child>
-                      <object class="GtkButton" id="Face.action">
+                      <object class="GtkButton" id="tab2.action">
                         <property name="label">gtk-media-play</property>
                         <property name="use_action_appearance">False</property>
                         <property name="related_action">face.go</property>
@@ -1771,7 +1771,7 @@
                     <property name="halign">end</property>
                     <property name="valign">end</property>
                     <child>
-                      <object class="GtkButton" id="Radius.action">
+                      <object class="GtkButton" id="tab3.action">
                         <property name="related_action">radius.go</property>
                         <property name="width_request">50</property>
                         <property name="height_request">20</property>
@@ -2070,7 +2070,7 @@
                     <property name="halign">end</property>
                     <property name="valign">end</property>
                     <child>
-                      <object class="GtkButton" id="Chamfer.action">
+                      <object class="GtkButton" id="tab4.action">
                         <property name="use_action_appearance">False</property>
                         <property name="related_action">chamfer.go</property>
                         <property name="width_request">50</property>
@@ -2341,7 +2341,7 @@
                     <property name="halign">end</property>
                     <property name="valign">end</property>
                     <child>
-                      <object class="GtkButton" id="Thread.action">
+                      <object class="GtkButton" id="tab5.action">
                         <property name="use_action_appearance">False</property>
                         <property name="related_action">thread.go</property>
                         <property name="width_request">50</property>
@@ -2503,7 +2503,7 @@
                     <property name="halign">end</property>
                     <property name="valign">end</property>
                     <child>
-                      <object class="GtkButton" id="Groove.action">
+                      <object class="GtkButton" id="tab6.action">
                         <property name="use_action_appearance">False</property>
                         <property name="related_action">groove.go</property>
                         <property name="width_request">50</property>
@@ -2705,7 +2705,7 @@
                     <property name="halign">end</property>
                     <property name="valign">end</property>
                     <child>
-                      <object class="GtkButton" id="Drill.action">
+                      <object class="GtkButton" id="tab7.action">
                         <property name="use_action_appearance">False</property>
                         <property name="related_action">drill.go</property>
                         <property name="width_request">50</property>

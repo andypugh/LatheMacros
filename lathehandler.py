@@ -116,15 +116,12 @@ class HandlerClass:
         t.connect_after("draw", self.on_expose)
         t.connect("destroy", Gtk.main_quit)
         t.add_events(Gdk.EventMask.STRUCTURE_MASK)
-        print(svgfile)
         self.svg = Rsvg.Handle().new_from_file(svgfile)
         self.active = True
         
         # handle Useropts
         if norun:
-            for c in range(0,6):
-                print(c)
-                print( f'tab{c}.action')
+            for c in range(0,7):
                 self.builder.get_object(f'tab{c}.action').set_visible(False)
 
     def show_keyb(self, obj, data=None):
@@ -151,7 +148,7 @@ class HandlerClass:
     def keyb_pm_click(self, obj, data=None):
         data = self.entry.get_text()
         if not data:
-            data = '-'
+            data = "-"
         elif data[0] == '-':
             data = data[1:]
         else:
