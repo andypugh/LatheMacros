@@ -21,7 +21,12 @@ EMBED_TAB_COMMAND = halcmd loadusr -Wn gladevcp gladevcp -c gladevcp -U notouch=
 The window will resize slowly if you grab the corner and move the mouse
 inside the window. It's not as bad as it was, but still needs work. 
 You may need to click the unmaximise button in the toolbar to get a
-window border to be able to use the resize handles. 
+window border to be able to use the resize handles.
+
+To relocate the files outside of the config directory (i.e. the direcrory containing the INI file) use, for example,
+"macros/lathehandeler.py" and "macros/lathemacro.ui" in the EMBED_TAB_COMMAND above. The system will look for the
+LatheMacro.svg file in the same path as the lathehandler.py file. If you need to relocate or rename this file then
+use "-U svgfile=/full/path/to/svgfile.svg" in the embed command.
 
 Notes on the keyboard:
 As well as the obvious functions and unit conversions, it can be used to
