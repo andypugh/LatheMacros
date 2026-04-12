@@ -6,7 +6,12 @@ G18 ; XZ Plane
 G21 ; Metric Units
 G90 ; Absolute Distance
 
+O70 IF [#5400 NE #7]
+#420 = #5420
+#422 = #5422
 M6 T#7 G43
+G0 X#420 Z#422
+O70 ENDIF
 
 O90 IF [#8 GT 0.5]
 	M8
@@ -20,7 +25,13 @@ O10 ENDIF
 #13 = #<_z> (starting Z)
 
 G96 D2500 S#2 ; Constant Surface Speed Mode
-M3
+
+O80 IF [#9 LT 0.5]
+m3 ;Start Spindle normal direction
+O80 ELSE
+m4 ;Start spindle opposite direction
+O80 ENDIF
+
 g95 F#4 ; Feed-Per-Rev Mode
 
 g4p1 ; Wait to reach speed

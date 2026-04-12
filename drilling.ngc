@@ -20,13 +20,23 @@ O100 IF [#6 LT 0.5]
     O<drilling> RETURN
 O100 ENDIF
 
+O70 IF [#5400 NE #6]
+#420 = #5420
+#422 = #5422
 M6 T#6 G43
+G0 X#420 Z#422
+O70 ENDIF
+
 G0 X0
 
 O83 IF [#5 GT 0] ; Pecking
     G17
     G95 F#3 ; Feed-Per-Rev Mode
-    G97 M3 S#10
+	O80 IF [#8 LT 0.5]
+	G97 M3 S#10 ;Start Spindle normal direction
+	O80 ELSE
+	G97 M4 S#10 ;Start spindle opposite direction
+	O80 ENDIF
     G98
     G83 R#<_z> Q#5 Z#4
     M5 M9 G18
@@ -36,7 +46,11 @@ O83 ENDIF
 O82 IF [1]; not pecking
     G17
     G95 F#3 ; Feed-Per-Rev Mode
-    G97 M3 S#10
+	O80 IF [#8 LT 0.5]
+	G97 M3 S#10 ;Start Spindle normal direction
+	O80 ELSE
+	G97 M4 S#10 ;Start spindle opposite direction
+	O80 ENDIF
     G98
     G82 R#<_z> P0.5 Z#4
     M5 M9 G18
