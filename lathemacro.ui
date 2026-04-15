@@ -1065,7 +1065,7 @@
                   </packing>
                 </child>
                 <child type="overlay">
-                  <object class="GtkGrid">
+                  <object class="GtkGrid" id="tab0.dro">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
                     <property name="halign">start</property>
@@ -1440,7 +1440,7 @@
                   </packing>
                 </child>
                 <child type="overlay">
-                  <object class="GtkGrid">
+                  <object class="GtkGrid" id="tab1.dro">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
                     <property name="halign">start</property>
@@ -1798,7 +1798,7 @@
                   </packing>
                 </child>
                 <child type="overlay">
-                  <object class="GtkGrid">
+                  <object class="GtkGrid" id="tab2.dro">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
                     <property name="halign">start</property>
@@ -2189,7 +2189,7 @@
                   </packing>
                 </child>
                 <child type="overlay">
-                  <object class="GtkGrid">
+                  <object class="GtkGrid" id="tab3.dro">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
                     <property name="halign">start</property>
@@ -2585,7 +2585,7 @@
                   </packing>
                 </child>
                 <child type="overlay">
-                  <object class="GtkGrid">
+                  <object class="GtkGrid" id="tab4.dro">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
                     <property name="halign">start</property>
@@ -2951,7 +2951,7 @@
                   </packing>
                 </child>
                 <child type="overlay">
-                  <object class="GtkGrid">
+                  <object class="GtkGrid" id="tab5.dro">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
                     <property name="halign">start</property>
@@ -3248,7 +3248,7 @@
                   </packing>
                 </child>
                 <child type="overlay">
-                  <object class="GtkGrid">
+                  <object class="GtkGrid" id="tab6.dro">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
                     <property name="halign">start</property>
@@ -3589,7 +3589,7 @@
                   </packing>
                 </child>
                 <child type="overlay">
-                  <object class="GtkGrid">
+                  <object class="GtkGrid" id="tab7.dro">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
                     <property name="halign">start</property>

@@ -127,10 +127,7 @@ class HandlerClass:
 
         if nodro:
             for c in range(0, 7):
-                for axis in ('X', 'Z'):
-                    w = self.builder.get_object(f'tab{c}.dro{axis}')
-                    if w:
-                        w.set_visible(False)
+                self.builder.get_object(f'tab{c}.dro').set_visible(False)
 
     def show_keyb(self, obj, data=None):
         if notouch: return False
