@@ -12,11 +12,12 @@ a physical button (connected to gladevcp.cycle-start) to start the macros
 (Strongly recommended, especially with Touchy)
 2) notouch will allow keyboard editing of the spinboxes. Otherwise the
 custom numeric keyboard will be shown.
+3) nodro will hide the DRO displays on all tabs.
 
 An example loadrt line, as used here in the Gmoccapy demo is:
 
 [DISPLAY]
-EMBED_TAB_COMMAND = halcmd loadusr -Wn gladevcp gladevcp -c gladevcp -U notouch=1 -U norun=0 -u lathehandler.py -x {XID} lathemacro.ui
+EMBED_TAB_COMMAND = halcmd loadusr -Wn gladevcp gladevcp -c gladevcp -U notouch=1 -U norun=0 nodro=1 -u lathehandler.py -x {XID} lathemacro.ui
 
 The window will resize slowly if you grab the corner and move the mouse
 inside the window. It's not as bad as it was, but still needs work. 

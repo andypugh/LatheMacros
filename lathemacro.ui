@@ -1071,7 +1071,7 @@
                     <property name="halign">start</property>
                     <property name="valign">end</property>
                     <child>
-                      <object class="HAL_DRO" id="turn.droX">
+                      <object class="HAL_DRO" id="tab0.droX">
                         <property name="name">droX</property>
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
@@ -1090,7 +1090,7 @@
                       </packing>
                     </child>
                     <child>
-                      <object class="HAL_DRO" id="turn.droZ">
+                      <object class="HAL_DRO" id="tab0.droZ">
                         <property name="name">droZ</property>
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
@@ -1446,7 +1446,7 @@
                     <property name="halign">start</property>
                     <property name="valign">end</property>
                     <child>
-                      <object class="HAL_DRO" id="bore.droX">
+                      <object class="HAL_DRO" id="tab1.droX">
                         <property name="name">droX</property>
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
@@ -1465,7 +1465,7 @@
                       </packing>
                     </child>
                     <child>
-                      <object class="HAL_DRO" id="bore.droZ">
+                      <object class="HAL_DRO" id="tab1.droZ">
                         <property name="name">droZ</property>
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
@@ -1804,7 +1804,7 @@
                     <property name="halign">start</property>
                     <property name="valign">end</property>
                     <child>
-                      <object class="HAL_DRO" id="face.droX">
+                      <object class="HAL_DRO" id="tab2.droX">
                         <property name="name">droX</property>
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
@@ -1823,7 +1823,7 @@
                       </packing>
                     </child>
                     <child>
-                      <object class="HAL_DRO" id="face.droZ">
+                      <object class="HAL_DRO" id="tab2.droZ">
                         <property name="name">droZ</property>
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
@@ -2195,7 +2195,7 @@
                     <property name="halign">start</property>
                     <property name="valign">end</property>
                     <child>
-                      <object class="HAL_DRO" id="radius.droX">
+                      <object class="HAL_DRO" id="tab3.droX">
                         <property name="name">droX</property>
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
@@ -2214,7 +2214,7 @@
                       </packing>
                     </child>
                     <child>
-                      <object class="HAL_DRO" id="radius.droZ">
+                      <object class="HAL_DRO" id="tab3.droZ">
                         <property name="name">droZ</property>
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
@@ -2591,7 +2591,7 @@
                     <property name="halign">start</property>
                     <property name="valign">end</property>
                     <child>
-                      <object class="HAL_DRO" id="chamfer.droX">
+                      <object class="HAL_DRO" id="tab4.droX">
                         <property name="name">droX</property>
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
@@ -2610,7 +2610,7 @@
                       </packing>
                     </child>
                     <child>
-                      <object class="HAL_DRO" id="chamfer.droZ">
+                      <object class="HAL_DRO" id="tab4.droZ">
                         <property name="name">droZ</property>
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
@@ -2957,7 +2957,7 @@
                     <property name="halign">start</property>
                     <property name="valign">end</property>
                     <child>
-                      <object class="HAL_DRO" id="thread.droX">
+                      <object class="HAL_DRO" id="tab5.droX">
                         <property name="name">droX</property>
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
@@ -2976,7 +2976,7 @@
                       </packing>
                     </child>
                     <child>
-                      <object class="HAL_DRO" id="thread.droZ">
+                      <object class="HAL_DRO" id="tab5.droZ">
                         <property name="name">droZ</property>
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
@@ -3254,7 +3254,7 @@
                     <property name="halign">start</property>
                     <property name="valign">end</property>
                     <child>
-                      <object class="HAL_DRO" id="groove.droX">
+                      <object class="HAL_DRO" id="tab6.droX">
                         <property name="name">droX</property>
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
@@ -3273,7 +3273,7 @@
                       </packing>
                     </child>
                     <child>
-                      <object class="HAL_DRO" id="groove.droZ">
+                      <object class="HAL_DRO" id="tab6.droZ">
                         <property name="name">droZ</property>
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
@@ -3595,7 +3595,7 @@
                     <property name="halign">start</property>
                     <property name="valign">end</property>
                     <child>
-                      <object class="HAL_DRO" id="drill.droX">
+                      <object class="HAL_DRO" id="tab7.droX">
                         <property name="name">droX</property>
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
@@ -3614,7 +3614,7 @@
                       </packing>
                     </child>
                     <child>
-                      <object class="HAL_DRO" id="drill.droZ">
+                      <object class="HAL_DRO" id="tab7.droZ">
                         <property name="name">droZ</property>
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
