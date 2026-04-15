@@ -41,7 +41,7 @@ from gi.repository import GdkPixbuf
 debug = 0
 notouch = 0
 norun = 0
-nodro = 0
+nodro = 1
 svgfile = os.path.join(os.path.dirname(__file__), "LatheMacro.svg")
 
 class HandlerClass:
