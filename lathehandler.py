@@ -48,20 +48,21 @@ class HandlerClass:
     tab_num = 0
 
     def on_expose(self,nb,data=None):
-        tab_num = nb.get_current_page()
-        tab = nb.get_nth_page(tab_num)
-        alloc = tab.get_allocation()
-        x, y, w, h = (alloc.x, alloc.y, alloc.width, alloc.height)
-        pixbuf = self.svg.get_pixbuf_sub(f'#layer{tab_num}').scale_simple(w-10, h-10, GdkPixbuf.InterpType.BILINEAR)
-        im = self.builder.get_object(f'Image{tab_num}')
-        im.set_from_pixbuf(pixbuf)
-        for c in im.get_parent().get_children():
-            if c.get_has_tooltip():
-                m = re.findall(r'<!--(\d+),(\d+)-->', c.get_tooltip_markup())
-                if len(m) > 0:
-                    x1 = int(m[0][0]); y1 = int(m[0][1])
-                    c.set_margin_left(max(0, w * x1/1500))
-                    c.set_margin_top(max(0, h * y1/1000))
+        if nb.has_focus():
+            tab_num = nb.get_current_page()
+            tab = nb.get_nth_page(tab_num)
+            alloc = tab.get_allocation()
+            x, y, w, h = (alloc.x, alloc.y, alloc.width, alloc.height)
+            pixbuf = self.svg.get_pixbuf_sub(f'#layer{tab_num}').scale_simple(w-10, h-10, GdkPixbuf.InterpType.BILINEAR)
+            im = self.builder.get_object(f'Image{tab_num}')
+            im.set_from_pixbuf(pixbuf)
+            for c in im.get_parent().get_children():
+                if c.get_has_tooltip():
+                    m = re.findall(r'<!--(\d+),(\d+)-->', c.get_tooltip_markup())
+                    if len(m) > 0:
+                        x1 = int(m[0][0]); y1 = int(m[0][1])
+                        c.set_margin_left(max(0, w * x1/1500))
+                        c.set_margin_top(max(0, h * y1/1000))
                 
 
     # decide if our window is active to mask the cycle-start hardware button
@@ -113,7 +114,7 @@ class HandlerClass:
 
         # This connects the expose event to re-draw and scale the SVG frames
         t = self.builder.get_object('tabs1')
-        t.connect_after("draw", self.on_expose)
+        t.connect_after("state-flags-changed", self.on_expose)
         t.connect("destroy", Gtk.main_quit)
         t.add_events(Gdk.EventMask.STRUCTURE_MASK)
         self.svg = Rsvg.Handle().new_from_file(svgfile)
