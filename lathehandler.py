@@ -41,6 +41,7 @@ from gi.repository import GdkPixbuf
 debug = 0
 notouch = 0
 norun = 0
+nodro = 1
 svgfile = os.path.join(os.path.dirname(__file__), "LatheMacro.svg")
 
 class HandlerClass:
@@ -124,6 +125,10 @@ class HandlerClass:
         if norun:
             for c in range(0,7):
                 self.builder.get_object(f'tab{c}.action').set_visible(False)
+
+        if nodro:
+            for c in range(0, 7):
+                self.builder.get_object(f'tab{c}.dro').set_visible(False)
 
     def show_keyb(self, obj, data=None):
         if notouch: return False

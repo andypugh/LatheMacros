@@ -8,13 +8,24 @@ G21 ; Metric Units
 G90 ; Absolute Distance
 
 
+O70 IF [#5400 NE #3]
+#420 = #5420
+#422 = #5422
 M6 T#3 G43
+G0 X#420 Z#422
+O70 ENDIF
 
 #14 = [#<_x> * 2] (starting X)
 #13 = #<_z> (starting Z)
 
-G96 D200 S#2 ; Constant Surface Speed Mode
-M3
+G96 D1000 S#2 ; Constant Surface Speed Mode
+
+O80 IF [#9 LT 0.5]
+m3 ;Start Spindle normal direction
+O80 ELSE
+m4 ;Start spindle opposite direction
+O80 ENDIF
+
 g95 F0.25 ; Feed-Per-Rev Mode
 
 O90 IF [#8 GT 0.5]
@@ -40,9 +51,13 @@ g4p1 ; Wait to reach speed
 		
         O51 ELSE
 		#<OD> = [#1 - 0.108 * #4]
-		#<ID> = [#1 - 1.0825 * #4]
+		;#<ID> = [#1 - 1.0825 * #4] 
+		;ligne originelle, bizarre !!! formule diametre interieur pour ecrou a priori
+		#<ID> = [#1 - 1.2268 * #4]
 		(debug, EXTERNAL Threading OD = #<OD> ID = #<ID>)
-		#3 = [#4 * 1.0825]
+		;#3 = [#4 * 1.0825]
+		;idem voir ci-dessus !!!
+		#3 = [#4 * 1.2268]
 		g1X [#<OD> + 1] ;final thread truncation
 		g0 z#13
 		g1 X #<OD>

@@ -278,20 +278,20 @@
   </object>
   <object class="EMC_Action_MDI" id="bore.go">
     <property name="stock_id">gtk-media-play</property>
-    <property name="command">O&lt;boring&gt; call [${bore.x-f}] [${bore.sf-f}] [${bore.cut-f}] [${bore.feed-f}] [${bore.z-f}] [${bore.rad-f}] [${bore.angle-f}] [${bore.tool-s}] [${bore.coolant}]</property>
+    <property name="command">O&lt;boring&gt; call [${bore.x-f}] [${bore.sf-f}] [${bore.cut-f}] [${bore.feed-f}] [${bore.z-f}] [${bore.rad-f}] [${bore.angle-f}] [${bore.tool-s}] [${bore.coolant}][${bore.m4}]</property>
   </object>
   <object class="EMC_Action_MDI" id="bore.toolchange">
     <property name="label" translatable="yes">Set Tool</property>
     <property name="command">M61 Q${bore.tool-s} G43 H${bore.tool-s}</property>
   </object>
   <object class="EMC_Action_MDI" id="chamfer.go">
-    <property name="command">O&lt;chamfer&gt;call [${chamfer.x-f}] [${chamfer.sf-f}] [0.5] [0] [${chamfer.z-f}] [${chamfer.tool-s}] [0] [${chamfer.size-f}]  [${chamfer.fo}] [${chamfer.fi}] [${chamfer.bo}] [${chamfer.coolant}]</property>
+    <property name="command">O&lt;chamfer&gt;call [${chamfer.x-f}] [${chamfer.sf-f}] [0.5] [0] [${chamfer.z-f}] [${chamfer.tool-s}] [0] [${chamfer.size-f}]  [${chamfer.fo}] [${chamfer.fi}] [${chamfer.bo}] [${chamfer.coolant}][${chamfer.m4}]</property>
   </object>
   <object class="EMC_Action_MDI" id="chamfer.toolchange">
     <property name="command">M61 Q${chamfer.tool-s} G43 H${chamfer.tool-s}</property>
   </object>
   <object class="EMC_Action_MDI" id="drill.go">
-    <property name="command">O&lt;drilling&gt; call [${drill.dia-f}]    [${drill.sf-f}]   [${drill.feed-f}]   [${drill.z-f}]   [${drill.peck-f}]   [${drill.tool-s}]   [${drill.coolant}] </property>
+    <property name="command">O&lt;drilling&gt; call [${drill.dia-f}]    [${drill.sf-f}]   [${drill.feed-f}]   [${drill.z-f}]   [${drill.peck-f}]   [${drill.tool-s}]   [${drill.coolant}] [${drill.m4}]</property>
   </object>
   <object class="EMC_Action_MDI" id="drill.toolchange">
     <property name="label" translatable="yes">Set Tool</property>
@@ -299,14 +299,14 @@
     <property name="command">M61 Q${drill.tool-s} G43 H${drill.tool-s}</property>
   </object>
   <object class="EMC_Action_MDI" id="face.go">
-    <property name="command">O&lt;facing&gt;call [${face.x-f}] [${face.sf-f}] [${face.cut-f}] [${face.feed-f}] [${face.z-f}] [${face.angle-s}] [${face.tool-s}] [${face.coolant}] </property>
+    <property name="command">O&lt;facing&gt;call [${face.x-f}] [${face.sf-f}] [${face.cut-f}] [${face.feed-f}] [${face.z-f}] [${face.angle-s}] [${face.tool-s}] [${face.coolant}] [${face.m4}]</property>
   </object>
   <object class="EMC_Action_MDI" id="face.toolchange">
     <property name="label" translatable="yes">Set Tool</property>
     <property name="command">M61 Q${face.tool-s} G43 H${face.tool-s}</property>
   </object>
   <object class="EMC_Action_MDI" id="groove.go">
-    <property name="command">O&lt;grooving&gt; call   [${groove.x-f}]   [${groove.sf-f}]   [${groove.feed-f}]    [${groove.tool-s}]   [${groove.coolant}]</property>
+    <property name="command">O&lt;grooving&gt; call   [${groove.x-f}]   [${groove.sf-f}]   [${groove.feed-f}]    [${groove.tool-s}]   [${groove.coolant}][${groove.m4}]</property>
   </object>
   <object class="EMC_Action_MDI" id="groove.toolchange">
     <property name="label" translatable="yes">Set Tool</property>
@@ -734,20 +734,20 @@
     </action-widgets>
   </object>
   <object class="EMC_Action_MDI" id="radius.go">
-    <property name="command">O&lt;radius&gt; call [${radius.x-f}] [${radius.sf-f}] [0.5] [0][${radius.z-f}] [${radius.tool-s}] [0] [${radius.rad-f}] [${radius.fo}] [${radius.fi}] [${radius.bo}]  [${radius.coolant}]</property>
+    <property name="command">O&lt;radius&gt; call [${radius.x-f}] [${radius.sf-f}] [0.5] [0] [${radius.z-f}] [${radius.tool-s}] [0] [${radius.rad-f}] [${radius.fo}] [${radius.fi}] [${radius.bo}] [${radius.coolant}] [${radius.m4}]</property>
   </object>
   <object class="EMC_Action_MDI" id="radius.toolchange">
     <property name="label" translatable="yes">Set Tool</property>
     <property name="command">M61 Q${radius.tool-s} G43 H${radius.tool-s}</property>
   </object>
   <object class="EMC_Action_MDI" id="thread.go">
-    <property name="command">O&lt;threading&gt;call [${thread.x-f}] [${thread.sf-f}] [${thread.tool-s}] [${thread.pitch-f}] [${thread.z-f}] [${thread.internal}] [${thread.external}]  [${thread.coolant}]</property>
+    <property name="command">O&lt;threading&gt;call [${thread.x-f}] [${thread.sf-f}] [${thread.tool-s}] [${thread.pitch-f}] [${thread.z-f}] [${thread.internal}] [${thread.external}]  [${thread.coolant}][${thread.m4}]</property>
   </object>
   <object class="EMC_Action_MDI" id="thread.toolchange">
     <property name="command">M61 Q${thread.tool-s} G43 H${thread.tool-s}</property>
   </object>
   <object class="EMC_Action_MDI" id="turn.go">
-    <property name="command">O&lt;turning&gt; call [${turn.x-f}] [${turn.sf-f}] [${turn.cut-f}] [${turn.feed-f}] [${turn.z-f}] [${turn.rad-f}] [${turn.angle-f}] [${turn.tool-s}] [${turn.coolant}]</property>
+    <property name="command">O&lt;turning&gt; call [${turn.x-f}] [${turn.sf-f}] [${turn.cut-f}] [${turn.feed-f}] [${turn.z-f}] [${turn.rad-f}] [${turn.angle-f}] [${turn.tool-s}] [${turn.coolant}][${turn.m4}]</property>
   </object>
   <object class="EMC_Action_MDI" id="turn.toolchange">
     <property name="label" translatable="yes">Set Tool</property>
@@ -1041,11 +1041,106 @@
                       </packing>
                     </child>
                     <child>
+                      <object class="HAL_CheckButton" id="turn.m4">
+                        <property name="label" translatable="yes">M4</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="receives_default">False</property>
+                        <property name="draw_indicator">True</property>
+                      </object>
+                      <packing>
+                        <property name="left_attach">1</property>
+                        <property name="top_attach">3</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <placeholder/>
+                    </child>
+                    <child>
                       <placeholder/>
                     </child>
                   </object>
                   <packing>
                     <property name="index">11</property>
+                  </packing>
+                </child>
+                <child type="overlay">
+                  <object class="GtkGrid" id="tab0.dro">
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <property name="halign">start</property>
+                    <property name="valign">end</property>
+                    <child>
+                      <object class="HAL_DRO" id="tab0.droX">
+                        <property name="name">droX</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="label" translatable="yes">Dia</property>
+                        <property name="diameter">True</property>
+                        <property name="display_units_mm">True</property>
+                        <property name="imperial_text_template">%9.3f</property>
+                        <property name="reference_type">1</property>
+                        <attributes>
+                          <attribute name="scale" value="3"/>
+                        </attributes>
+                      </object>
+                      <packing>
+                        <property name="left_attach">1</property>
+                        <property name="top_attach">0</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="HAL_DRO" id="tab0.droZ">
+                        <property name="name">droZ</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="label" translatable="yes">Z</property>
+                        <property name="max_width_chars">2</property>
+                        <property name="display_units_mm">True</property>
+                        <property name="imperial_text_template">%9.3f</property>
+                        <property name="joint_number">2</property>
+                        <property name="reference_type">1</property>
+                        <attributes>
+                          <attribute name="scale" value="3"/>
+                        </attributes>
+                      </object>
+                      <packing>
+                        <property name="left_attach">3</property>
+                        <property name="top_attach">0</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkLabel">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="margin_left">30</property>
+                        <property name="label" translatable="yes">Z</property>
+                        <attributes>
+                          <attribute name="scale" value="3"/>
+                        </attributes>
+                      </object>
+                      <packing>
+                        <property name="left_attach">2</property>
+                        <property name="top_attach">0</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkLabel">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="label" translatable="yes">Dia</property>
+                        <attributes>
+                          <attribute name="scale" value="3"/>
+                        </attributes>
+                      </object>
+                      <packing>
+                        <property name="left_attach">0</property>
+                        <property name="top_attach">0</property>
+                      </packing>
+                    </child>
+                  </object>
+                  <packing>
+                    <property name="index">8</property>
                   </packing>
                 </child>
               </object>
@@ -1321,11 +1416,105 @@
                       </packing>
                     </child>
                     <child>
+                      <object class="HAL_CheckButton" id="bore.m4">
+                        <property name="label" translatable="yes">M4</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="receives_default">False</property>
+                        <property name="draw_indicator">True</property>
+                      </object>
+                      <packing>
+                        <property name="left_attach">1</property>
+                        <property name="top_attach">3</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <placeholder/>
+                    </child>
+                    <child>
                       <placeholder/>
                     </child>
                   </object>
                   <packing>
                     <property name="index">11</property>
+                  </packing>
+                </child>
+                <child type="overlay">
+                  <object class="GtkGrid" id="tab1.dro">
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <property name="halign">start</property>
+                    <property name="valign">end</property>
+                    <child>
+                      <object class="HAL_DRO" id="tab1.droX">
+                        <property name="name">droX</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="label" translatable="yes">Dia</property>
+                        <property name="diameter">True</property>
+                        <property name="display_units_mm">True</property>
+                        <property name="imperial_text_template">%9.3f</property>
+                        <property name="reference_type">1</property>
+                        <attributes>
+                          <attribute name="scale" value="3"/>
+                        </attributes>
+                      </object>
+                      <packing>
+                        <property name="left_attach">1</property>
+                        <property name="top_attach">0</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="HAL_DRO" id="tab1.droZ">
+                        <property name="name">droZ</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="label" translatable="yes">Z</property>
+                        <property name="max_width_chars">2</property>
+                        <property name="display_units_mm">True</property>
+                        <property name="imperial_text_template">%9.3f</property>
+                        <property name="joint_number">2</property>
+                        <property name="reference_type">1</property>
+                        <attributes>
+                          <attribute name="scale" value="3"/>
+                        </attributes>
+                      </object>
+                      <packing>
+                        <property name="left_attach">3</property>
+                        <property name="top_attach">0</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkLabel">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="label" translatable="yes">Z</property>
+                        <attributes>
+                          <attribute name="scale" value="3"/>
+                        </attributes>
+                      </object>
+                      <packing>
+                        <property name="left_attach">2</property>
+                        <property name="top_attach">0</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkLabel">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="label" translatable="yes">Dia</property>
+                        <attributes>
+                          <attribute name="scale" value="3"/>
+                        </attributes>
+                      </object>
+                      <packing>
+                        <property name="left_attach">0</property>
+                        <property name="top_attach">0</property>
+                      </packing>
+                    </child>
+                  </object>
+                  <packing>
+                    <property name="index">8</property>
                   </packing>
                 </child>
               </object>
@@ -1585,11 +1774,105 @@
                       </packing>
                     </child>
                     <child>
+                      <object class="HAL_CheckButton" id="face.m4">
+                        <property name="label" translatable="yes">M4</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="receives_default">False</property>
+                        <property name="draw_indicator">True</property>
+                      </object>
+                      <packing>
+                        <property name="left_attach">1</property>
+                        <property name="top_attach">3</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <placeholder/>
+                    </child>
+                    <child>
                       <placeholder/>
                     </child>
                   </object>
                   <packing>
                     <property name="index">10</property>
+                  </packing>
+                </child>
+                <child type="overlay">
+                  <object class="GtkGrid" id="tab2.dro">
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <property name="halign">start</property>
+                    <property name="valign">end</property>
+                    <child>
+                      <object class="HAL_DRO" id="tab2.droX">
+                        <property name="name">droX</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="label" translatable="yes">Dia</property>
+                        <property name="diameter">True</property>
+                        <property name="display_units_mm">True</property>
+                        <property name="imperial_text_template">%9.3f</property>
+                        <property name="reference_type">1</property>
+                        <attributes>
+                          <attribute name="scale" value="3"/>
+                        </attributes>
+                      </object>
+                      <packing>
+                        <property name="left_attach">1</property>
+                        <property name="top_attach">0</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="HAL_DRO" id="tab2.droZ">
+                        <property name="name">droZ</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="label" translatable="yes">Z</property>
+                        <property name="max_width_chars">2</property>
+                        <property name="display_units_mm">True</property>
+                        <property name="imperial_text_template">%9.3f</property>
+                        <property name="joint_number">2</property>
+                        <property name="reference_type">1</property>
+                        <attributes>
+                          <attribute name="scale" value="3"/>
+                        </attributes>
+                      </object>
+                      <packing>
+                        <property name="left_attach">3</property>
+                        <property name="top_attach">0</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkLabel">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="label" translatable="yes">Z</property>
+                        <attributes>
+                          <attribute name="scale" value="3"/>
+                        </attributes>
+                      </object>
+                      <packing>
+                        <property name="left_attach">2</property>
+                        <property name="top_attach">0</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkLabel">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="label" translatable="yes">Dia</property>
+                        <attributes>
+                          <attribute name="scale" value="3"/>
+                        </attributes>
+                      </object>
+                      <packing>
+                        <property name="left_attach">0</property>
+                        <property name="top_attach">0</property>
+                      </packing>
+                    </child>
+                  </object>
+                  <packing>
+                    <property name="index">7</property>
                   </packing>
                 </child>
               </object>
@@ -1882,11 +2165,105 @@
                       </packing>
                     </child>
                     <child>
+                      <object class="HAL_CheckButton" id="radius.m4">
+                        <property name="label" translatable="yes">M4</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="receives_default">False</property>
+                        <property name="draw_indicator">True</property>
+                      </object>
+                      <packing>
+                        <property name="left_attach">1</property>
+                        <property name="top_attach">3</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <placeholder/>
+                    </child>
+                    <child>
                       <placeholder/>
                     </child>
                   </object>
                   <packing>
                     <property name="index">11</property>
+                  </packing>
+                </child>
+                <child type="overlay">
+                  <object class="GtkGrid" id="tab3.dro">
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <property name="halign">start</property>
+                    <property name="valign">end</property>
+                    <child>
+                      <object class="HAL_DRO" id="tab3.droX">
+                        <property name="name">droX</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="label" translatable="yes">Dia</property>
+                        <property name="diameter">True</property>
+                        <property name="display_units_mm">True</property>
+                        <property name="imperial_text_template">%9.3f</property>
+                        <property name="reference_type">1</property>
+                        <attributes>
+                          <attribute name="scale" value="3"/>
+                        </attributes>
+                      </object>
+                      <packing>
+                        <property name="left_attach">1</property>
+                        <property name="top_attach">0</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="HAL_DRO" id="tab3.droZ">
+                        <property name="name">droZ</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="label" translatable="yes">Z</property>
+                        <property name="max_width_chars">2</property>
+                        <property name="display_units_mm">True</property>
+                        <property name="imperial_text_template">%9.3f</property>
+                        <property name="joint_number">2</property>
+                        <property name="reference_type">1</property>
+                        <attributes>
+                          <attribute name="scale" value="3"/>
+                        </attributes>
+                      </object>
+                      <packing>
+                        <property name="left_attach">3</property>
+                        <property name="top_attach">0</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkLabel">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="label" translatable="yes">Z</property>
+                        <attributes>
+                          <attribute name="scale" value="3"/>
+                        </attributes>
+                      </object>
+                      <packing>
+                        <property name="left_attach">2</property>
+                        <property name="top_attach">0</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkLabel">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="label" translatable="yes">Dia</property>
+                        <attributes>
+                          <attribute name="scale" value="3"/>
+                        </attributes>
+                      </object>
+                      <packing>
+                        <property name="left_attach">0</property>
+                        <property name="top_attach">0</property>
+                      </packing>
+                    </child>
+                  </object>
+                  <packing>
+                    <property name="index">8</property>
                   </packing>
                 </child>
               </object>
@@ -2184,11 +2561,105 @@
                       </packing>
                     </child>
                     <child>
+                      <object class="HAL_CheckButton" id="chamfer.m4">
+                        <property name="label" translatable="yes">M4</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="receives_default">False</property>
+                        <property name="draw_indicator">True</property>
+                      </object>
+                      <packing>
+                        <property name="left_attach">1</property>
+                        <property name="top_attach">3</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <placeholder/>
+                    </child>
+                    <child>
                       <placeholder/>
                     </child>
                   </object>
                   <packing>
                     <property name="index">11</property>
+                  </packing>
+                </child>
+                <child type="overlay">
+                  <object class="GtkGrid" id="tab4.dro">
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <property name="halign">start</property>
+                    <property name="valign">end</property>
+                    <child>
+                      <object class="HAL_DRO" id="tab4.droX">
+                        <property name="name">droX</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="label" translatable="yes">Dia</property>
+                        <property name="diameter">True</property>
+                        <property name="display_units_mm">True</property>
+                        <property name="imperial_text_template">%9.3f</property>
+                        <property name="reference_type">1</property>
+                        <attributes>
+                          <attribute name="scale" value="3"/>
+                        </attributes>
+                      </object>
+                      <packing>
+                        <property name="left_attach">1</property>
+                        <property name="top_attach">0</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="HAL_DRO" id="tab4.droZ">
+                        <property name="name">droZ</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="label" translatable="yes">Z</property>
+                        <property name="max_width_chars">2</property>
+                        <property name="display_units_mm">True</property>
+                        <property name="imperial_text_template">%9.3f</property>
+                        <property name="joint_number">2</property>
+                        <property name="reference_type">1</property>
+                        <attributes>
+                          <attribute name="scale" value="3"/>
+                        </attributes>
+                      </object>
+                      <packing>
+                        <property name="left_attach">3</property>
+                        <property name="top_attach">0</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkLabel">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="label" translatable="yes">Z</property>
+                        <attributes>
+                          <attribute name="scale" value="3"/>
+                        </attributes>
+                      </object>
+                      <packing>
+                        <property name="left_attach">2</property>
+                        <property name="top_attach">0</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkLabel">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="label" translatable="yes">Dia</property>
+                        <attributes>
+                          <attribute name="scale" value="3"/>
+                        </attributes>
+                      </object>
+                      <packing>
+                        <property name="left_attach">0</property>
+                        <property name="top_attach">0</property>
+                      </packing>
+                    </child>
+                  </object>
+                  <packing>
+                    <property name="index">8</property>
                   </packing>
                 </child>
               </object>
@@ -2456,11 +2927,105 @@
                       </packing>
                     </child>
                     <child>
+                      <object class="HAL_CheckButton" id="thread.m4">
+                        <property name="label" translatable="yes">M4</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="receives_default">False</property>
+                        <property name="draw_indicator">True</property>
+                      </object>
+                      <packing>
+                        <property name="left_attach">1</property>
+                        <property name="top_attach">3</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <placeholder/>
+                    </child>
+                    <child>
                       <placeholder/>
                     </child>
                   </object>
                   <packing>
                     <property name="index">9</property>
+                  </packing>
+                </child>
+                <child type="overlay">
+                  <object class="GtkGrid" id="tab5.dro">
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <property name="halign">start</property>
+                    <property name="valign">end</property>
+                    <child>
+                      <object class="HAL_DRO" id="tab5.droX">
+                        <property name="name">droX</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="label" translatable="yes">Dia</property>
+                        <property name="diameter">True</property>
+                        <property name="display_units_mm">True</property>
+                        <property name="imperial_text_template">%9.3f</property>
+                        <property name="reference_type">1</property>
+                        <attributes>
+                          <attribute name="scale" value="3"/>
+                        </attributes>
+                      </object>
+                      <packing>
+                        <property name="left_attach">1</property>
+                        <property name="top_attach">0</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="HAL_DRO" id="tab5.droZ">
+                        <property name="name">droZ</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="label" translatable="yes">Z</property>
+                        <property name="max_width_chars">2</property>
+                        <property name="display_units_mm">True</property>
+                        <property name="imperial_text_template">%9.3f</property>
+                        <property name="joint_number">2</property>
+                        <property name="reference_type">1</property>
+                        <attributes>
+                          <attribute name="scale" value="3"/>
+                        </attributes>
+                      </object>
+                      <packing>
+                        <property name="left_attach">3</property>
+                        <property name="top_attach">0</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkLabel">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="label" translatable="yes">Z</property>
+                        <attributes>
+                          <attribute name="scale" value="3"/>
+                        </attributes>
+                      </object>
+                      <packing>
+                        <property name="left_attach">2</property>
+                        <property name="top_attach">0</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkLabel">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="label" translatable="yes">Dia</property>
+                        <attributes>
+                          <attribute name="scale" value="3"/>
+                        </attributes>
+                      </object>
+                      <packing>
+                        <property name="left_attach">0</property>
+                        <property name="top_attach">0</property>
+                      </packing>
+                    </child>
+                  </object>
+                  <packing>
+                    <property name="index">7</property>
                   </packing>
                 </child>
               </object>
@@ -2637,6 +3202,22 @@
                       </packing>
                     </child>
                     <child>
+                      <object class="HAL_CheckButton" id="groove.m4">
+                        <property name="label" translatable="yes">M4</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="receives_default">False</property>
+                        <property name="draw_indicator">True</property>
+                      </object>
+                      <packing>
+                        <property name="left_attach">1</property>
+                        <property name="top_attach">3</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <placeholder/>
+                    </child>
+                    <child>
                       <placeholder/>
                     </child>
                   </object>
@@ -2661,6 +3242,84 @@
                     <property name="adjustment">GrooveFeedAdj</property>
                     <property name="digits">3</property>
                     <signal name="button-press-event" handler="show_keyb" swapped="no"/>
+                  </object>
+                  <packing>
+                    <property name="index">4</property>
+                  </packing>
+                </child>
+                <child type="overlay">
+                  <object class="GtkGrid" id="tab6.dro">
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <property name="halign">start</property>
+                    <property name="valign">end</property>
+                    <child>
+                      <object class="HAL_DRO" id="tab6.droX">
+                        <property name="name">droX</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="label" translatable="yes">Dia</property>
+                        <property name="diameter">True</property>
+                        <property name="display_units_mm">True</property>
+                        <property name="imperial_text_template">%9.3f</property>
+                        <property name="reference_type">1</property>
+                        <attributes>
+                          <attribute name="scale" value="3"/>
+                        </attributes>
+                      </object>
+                      <packing>
+                        <property name="left_attach">1</property>
+                        <property name="top_attach">0</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="HAL_DRO" id="tab6.droZ">
+                        <property name="name">droZ</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="label" translatable="yes">Z</property>
+                        <property name="max_width_chars">2</property>
+                        <property name="display_units_mm">True</property>
+                        <property name="imperial_text_template">%9.3f</property>
+                        <property name="joint_number">2</property>
+                        <property name="reference_type">1</property>
+                        <attributes>
+                          <attribute name="scale" value="3"/>
+                        </attributes>
+                      </object>
+                      <packing>
+                        <property name="left_attach">3</property>
+                        <property name="top_attach">0</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkLabel">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="label" translatable="yes">Z</property>
+                        <attributes>
+                          <attribute name="scale" value="3"/>
+                        </attributes>
+                      </object>
+                      <packing>
+                        <property name="left_attach">2</property>
+                        <property name="top_attach">0</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkLabel">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="label" translatable="yes">Dia</property>
+                        <attributes>
+                          <attribute name="scale" value="3"/>
+                        </attributes>
+                      </object>
+                      <packing>
+                        <property name="left_attach">0</property>
+                        <property name="top_attach">0</property>
+                      </packing>
+                    </child>
                   </object>
                   <packing>
                     <property name="index">4</property>
@@ -2816,6 +3475,22 @@
                       </packing>
                     </child>
                     <child>
+                      <object class="HAL_CheckButton" id="drill.m4">
+                        <property name="label" translatable="yes">M4</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="receives_default">False</property>
+                        <property name="draw_indicator">True</property>
+                      </object>
+                      <packing>
+                        <property name="left_attach">1</property>
+                        <property name="top_attach">3</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <placeholder/>
+                    </child>
+                    <child>
                       <placeholder/>
                     </child>
                   </object>
@@ -2911,6 +3586,84 @@
                   </object>
                   <packing>
                     <property name="index">5</property>
+                  </packing>
+                </child>
+                <child type="overlay">
+                  <object class="GtkGrid" id="tab7.dro">
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <property name="halign">start</property>
+                    <property name="valign">end</property>
+                    <child>
+                      <object class="HAL_DRO" id="tab7.droX">
+                        <property name="name">droX</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="label" translatable="yes">Dia</property>
+                        <property name="diameter">True</property>
+                        <property name="display_units_mm">True</property>
+                        <property name="imperial_text_template">%9.3f</property>
+                        <property name="reference_type">1</property>
+                        <attributes>
+                          <attribute name="scale" value="3"/>
+                        </attributes>
+                      </object>
+                      <packing>
+                        <property name="left_attach">1</property>
+                        <property name="top_attach">0</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="HAL_DRO" id="tab7.droZ">
+                        <property name="name">droZ</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="label" translatable="yes">Z</property>
+                        <property name="max_width_chars">2</property>
+                        <property name="display_units_mm">True</property>
+                        <property name="imperial_text_template">%9.3f</property>
+                        <property name="joint_number">2</property>
+                        <property name="reference_type">1</property>
+                        <attributes>
+                          <attribute name="scale" value="3"/>
+                        </attributes>
+                      </object>
+                      <packing>
+                        <property name="left_attach">3</property>
+                        <property name="top_attach">0</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkLabel">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="label" translatable="yes">Z</property>
+                        <attributes>
+                          <attribute name="scale" value="3"/>
+                        </attributes>
+                      </object>
+                      <packing>
+                        <property name="left_attach">2</property>
+                        <property name="top_attach">0</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkLabel">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="label" translatable="yes">Dia</property>
+                        <attributes>
+                          <attribute name="scale" value="3"/>
+                        </attributes>
+                      </object>
+                      <packing>
+                        <property name="left_attach">0</property>
+                        <property name="top_attach">0</property>
+                      </packing>
+                    </child>
+                  </object>
+                  <packing>
+                    <property name="index">6</property>
                   </packing>
                 </child>
               </object>

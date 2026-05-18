@@ -8,14 +8,25 @@ G21 ; Metric Units
 G90 ; Absolute Distance
 G91.1 ; but not for arcs
 
+O70 IF [#5400 NE #4]
+#420 = #5420
+#422 = #5422
 M6 T#4 G43
+G0 X#420 Z#422
+O70 ENDIF
 
 #1 = [#1 / 2] ; because of radius mode
 
 #14 = [#<_x>] (starting X)
 
-G96 D1500 S#2 ; Constant Surface Speed Mode
-m3 ;Start Spindle
+G96 D5000 S#2 ; Constant Surface Speed Mode
+
+O80 IF [#6 LT 0.5]
+m3 ;Start Spindle normal direction
+O80 ELSE
+m4 ;Start spindle opposite direction
+O80 ENDIF
+
 g95 F#3 ; Feed-Per-Rev Mode
 
 O90 IF [#5 GT 0.5]

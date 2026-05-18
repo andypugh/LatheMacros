@@ -8,15 +8,27 @@ G21 ; Metric Units
 G90 ; Absolute Distance
 
 
+O70 IF [#5400 NE #6]
+#420 = #5420
+#422 = #5422
 M6 T#6 G43
+G0 X#420 Z#422
+O70 ENDIF
 
 #1 = [#1 / 2] ; because of radius mode
+#40 = #13 ; store the m3 or m4 value into 40th variable
 
 #14 = [#<_x>] (starting X)
 #13 = [#<_z>] (starting Z)
 
 G96 D1500 S#2 ; Constant Surface Speed Mode
-M3
+
+O80 IF [#40 LT 0.5]
+m3 ;Start Spindle normal direction
+O80 ELSE
+m4 ;Start spindle opposite direction
+O80 ENDIF
+
 g95 F0.1 ; Feed-Per-Rev Mode
 
 O90 IF [#12 GT 0.5]
