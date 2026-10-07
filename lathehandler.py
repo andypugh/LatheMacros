@@ -46,15 +46,25 @@ svgfile = os.path.join(os.path.dirname(__file__), "LatheMacro.svg")
 class HandlerClass:
     active = False
     tab_num = 0
+    
+    def focus_in(self, obj, event, data=None):
+        self.active = True
+        self.update_tabs(self.nb)
+        
+    def focus_out(self, obj, event, data=None):
+        self.active = False
 
-    def on_expose(self,nb,data=None):
-        if nb.has_focus():
-            tab_num = nb.get_current_page()
+    def update_tabs(self,nb,data=None):
+        for tab_num in range(nb.get_n_pages()):
             tab = nb.get_nth_page(tab_num)
+            im = [c for c in tab.get_children() if isinstance(c, Gtk.Image)][0]
+            #unlock resizing for the image FIXME - not actually working
+            #im.set_size_request(1,1)  
+            #im.set_halign(Gtk.Align.FILL)
+            #im.set_valign(Gtk.Align.FILL)
             alloc = tab.get_allocation()
-            x, y, w, h = (alloc.x, alloc.y, alloc.width, alloc.height)
-            pixbuf = self.svg.get_pixbuf_sub(f'#layer{tab_num}').scale_simple(w-10, h-10, GdkPixbuf.InterpType.BILINEAR)
-            im = self.builder.get_object(f'Image{tab_num}')
+            w, h = alloc.width, alloc.height
+            pixbuf = self.svg.get_pixbuf_sub(f'#layer{tab_num}').scale_simple(w * 0.98, h * 0.98, GdkPixbuf.InterpType.BILINEAR)
             im.set_from_pixbuf(pixbuf)
             for c in im.get_parent().get_children():
                 if c.get_has_tooltip():
@@ -63,22 +73,10 @@ class HandlerClass:
                         x1 = int(m[0][0]); y1 = int(m[0][1])
                         c.set_margin_left(max(0, w * x1/1500))
                         c.set_margin_top(max(0, h * y1/1000))
-                
-
-    # decide if our window is active to mask the cycle-start hardware button
-    # FIXME: This is probably not as reliable as one might wish. 
-    def event(self,w,event):
-        if w.is_active():
-            if w.has_toplevel_focus() :
-                self.active = True
-            else:
-                self.active = False
-
-    # Capture notify events
-    def on_map_event(self, widget, data=None):
-        top = widget.get_toplevel()
-        top.connect('notify', self.event)
-
+            
+    def switch_page(self, nb, tab, tab_num, data=None):
+        self.update_tabs(nb)
+        
     def on_destroy(self,obj,data=None):
         self.ini.save_state(self)
 
@@ -104,26 +102,29 @@ class HandlerClass:
         # A pin to use a physical switch to start the cycle
         self.cycle_start = hal_glib.GPin(halcomp.newpin('cycle-start', hal.HAL_BIT, hal.HAL_IN))
         self.cycle_start.connect('value-changed', self.cycle_pin)
-
-        # This catches the signal from Touchy to say that the tab is exposed 
-        t = self.builder.get_object('macrobox')
-        t.connect('map-event',self.on_map_event)
-        t.add_events(Gdk.EventMask.STRUCTURE_MASK)
         
         self.cmd = linuxcnc.command()
 
-        # This connects the expose event to re-draw and scale the SVG frames
-        t = self.builder.get_object('tabs1')
-        t.connect_after("state-flags-changed", self.on_expose)
-        t.connect("destroy", Gtk.main_quit)
-        t.add_events(Gdk.EventMask.STRUCTURE_MASK)
+        # This connects the events to re-draw and scale the SVG frames
+        self.nb = self.builder.get_object('Cycles')
+        self.nb.connect("switch-page", self.switch_page)
+        self.nb.connect("destroy", Gtk.main_quit)
+        self.nb.add_events(Gdk.EventMask.STRUCTURE_MASK)
         self.svg = Rsvg.Handle().new_from_file(svgfile)
-        self.active = True
+        self.active = False
+        #self.update_tabs(self.nb)
+        
+        e = self.builder.get_object('macrobox')
+        e.set_can_focus(True)
+        e.add_events(Gdk.EventMask.FOCUS_CHANGE_MASK)
+        e.connect_after("focus-in-event", self.focus_in)
+        e.connect_after("focus-out-event", self.focus_out)
         
         # handle Useropts
         if norun:
-            for c in range(0,7):
-                self.builder.get_object(f'tab{c}.action').set_visible(False)
+            for tab_num in range(self.nb.get_n_pages()):
+                name = Gtk.Buildable.get_name(self.nb.get_nth_page(tab_num))
+                self.builder.get_object(f'{name}.action').set_visible(False)
 
     def show_keyb(self, obj, data=None):
         if notouch: return False
@@ -191,19 +192,14 @@ class HandlerClass:
     def cycle_pin(self, pin, data = None):
         if pin.get() == 0:
             return
-        if self.active:
-            nb = self.builder.get_object('tabs1')
-            print('current tab', nb.get_current_page())
-            c = self.builder.get_object(f"tab{nb.get_current_page()}.action")
-            if c is not None:
-                self.cmd.abort()
-                self.cmd.mode(linuxcnc.MODE_MDI)
-                self.cmd.wait_complete()
-                c.emit('clicked')
-                print(c.get_name(), "clicked")
-
-    def testing(self, obj, data = None):
-        print('event', data)
+        if self.active == False:
+            return
+        c = self.builder.get_object(f"tab{nb.get_current_page()}.action")
+        if c is not None:
+            self.cmd.abort()
+            self.cmd.mode(linuxcnc.MODE_MDI)
+            self.cmd.wait_complete()
+            c.emit('clicked')
 
 def get_handlers(halcomp,builder,useropts):
 
@@ -214,6 +210,3 @@ def get_handlers(halcomp,builder,useropts):
 
     set_debug(debug)
     return [HandlerClass(halcomp,builder,useropts)]
-
-
-
